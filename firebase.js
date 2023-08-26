@@ -12,7 +12,7 @@ import { CreateAgendaCard } from "./utlis.js";
 
 const fetchData = async () => {
     try {
-        const response = await fetch('https://superlative-youtiao-7c3c48.netlify.app/URL');
+        const response = await fetch('https://procrastino.netlify.app/URL');
         if (!response.ok) {
             throw new Error('Network response was not ok');
         }
