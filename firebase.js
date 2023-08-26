@@ -9,8 +9,22 @@ import { CreateAgendaCard } from "./utlis.js";
 
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+
+const fetchData = async () => {
+    try {
+        const response = await fetch('https://superlative-youtiao-7c3c48.netlify.app/URL');
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        const data = await response.text();
+        return data; // This will contain the response from the edge function
+    } catch (error) {
+        console.error('Fetch error:', error);
+    }
+};
+
 const firebaseConfig = {
-    databaseURL: import.meta.env.VITE_DATABASE_URL
+    databaseURL: await fetchData()
 }
 // Initialize Firebase
 console.log(firebaseConfig)
