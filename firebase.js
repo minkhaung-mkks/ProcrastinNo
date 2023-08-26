@@ -25,13 +25,17 @@ const fetchData = async () => {
     }
 };
 
-const firebaseConfig = {
-    databaseURL: fetchData()
+const startApp = async () => {
+    const firebaseConfig = {
+        databaseURL: await fetchData()
+    }
+    // Initialize Firebase
+    console.log(firebaseConfig)
+    const app = initializeApp(firebaseConfig);
+    const database = getDatabase(app)
 }
-// Initialize Firebase
-console.log(firebaseConfig)
-const app = initializeApp(firebaseConfig);
-const database = getDatabase(app)
+
+
 
 const agendaBox = document.querySelector('.agenda_box')
 const userAgenda = ref(database, "To-Dos")
