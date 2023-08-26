@@ -24,7 +24,7 @@ const fetchData = async () => {
 };
 
 const firebaseConfig = {
-    databaseURL: await fetchData()
+    databaseURL: fetchData()
 }
 // Initialize Firebase
 console.log(firebaseConfig)
