@@ -16,7 +16,9 @@ const fetchData = async () => {
         if (!response.ok) {
             throw new Error('Network response was not ok');
         }
+        console.log(response)
         const data = await response.text();
+        console.log(response.text())
         return data; // This will contain the response from the edge function
     } catch (error) {
         console.error('Fetch error:', error);
