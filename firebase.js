@@ -34,7 +34,7 @@ const startApp = async () => {
     const app = initializeApp(firebaseConfig);
     const database = getDatabase(app)
 }
-
+startApp()
 
 
 const agendaBox = document.querySelector('.agenda_box')
