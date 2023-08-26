@@ -18,7 +18,7 @@ const fetchData = async () => {
         }
         console.log(response)
         const data = await response.text();
-        console.log(response.text())
+        console.log(data)
         return data; // This will contain the response from the edge function
     } catch (error) {
         console.error('Fetch error:', error);
